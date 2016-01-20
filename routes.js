@@ -6,7 +6,7 @@ app.use(express.static(process.cwd()+"/public"));
 app.get("/", function(req, res){
   
   
-  res.sendFile("index.html");
+  res.sendFile(process.cwd()+ "public/index.html");
   res.end();
 })
 
