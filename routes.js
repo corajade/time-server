@@ -1,12 +1,13 @@
 var express=require("express");
 var app=express();
 var url=require("url");
+
 var checkStr=require(process.cwd()+ "/checkStr.js");
-app.use(express.static(process.cwd()+"/public"));
+app.use(express.static(process.cwd() + "/public"));
 app.get("/", function(req, res){
   
   
-  res.sendFile(process.cwd()+ "public/index.html");
+  res.sendFile("index.html");
   res.end();
 })
 
