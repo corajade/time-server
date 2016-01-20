@@ -1,13 +1,14 @@
+process.env.PWD=process.cwd();
 var express=require("express");
 var app=express();
 var url=require("url");
 
 var checkStr=require(process.cwd()+ "/checkStr.js");
-app.use(express.static(process.cwd() + "/public"));
+app.use(express.static(process.env.PWD + "/public"));
 app.get("/", function(req, res){
   
   
-  res.sendFile("index.html");
+  res.sendFile(process.env.PWD+ "/public/index.html");
   res.end();
 })
 
