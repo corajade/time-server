@@ -2,11 +2,11 @@ var express=require("express");
 var app=express();
 var url=require("url");
 var checkStr=require(process.cwd()+ "/checkStr.js");
-app.use(express.static("/home/ubuntu/workspace/time-server/public"));
+app.use(express.static(process.cwd()+"/public"));
 app.get("/", function(req, res){
-  console.log(process.cwd());
   
-  res.sendFile("/home/ubuntu/workspace/time-server/public/index.html");
+  
+  res.sendFile("index.html");
   res.end();
 })
 
@@ -21,4 +21,4 @@ app.get(/./, function(req, res){
   res.end();
 });
 
-app.listen(process.env.PORT || 8080 );
+app.listen(process.env.PORT || 8080);
